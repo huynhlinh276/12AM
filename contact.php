@@ -2,7 +2,7 @@
 	
 	$name = $_POST['name'];
 	$email = $_POST['email'];
-	$message = $_POST['message'];
+	$message  = $_POST['message'];
 	
 	$formcontent="Name: $name\n\nEmail: $email\n\nMessage: $message";
 	
