@@ -4,6 +4,33 @@ body,
   height: 100%;
 }
 
+new Darkroom('#target', {
+   Canvas initialization size
+  minWidth: 100,
+  minHeight: 100,
+  maxWidth: 500,
+  maxHeight: 500,
+
+   Plugins options
+  plugins: {
+    crop: {
+      minHeight: 50,
+      minWidth: 50,
+      ratio: 1
+    },
+    save: false disable plugin
+  },
+
+   Post initialization method
+  initialize: function() {
+   Active crop selection
+    this.plugins['crop'].requireFocus();
+
+     Add custom listener
+    this.addEventListener('core:transformation', function() { /* ... */ });
+  }
+});
+
 body {
   font-family: 'Open Sans', sans-serif;
   font-size: 14px;
