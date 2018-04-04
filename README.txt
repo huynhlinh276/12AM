@@ -1,3 +1,3 @@
-A Pen created at CodePen.io. You can find this one at https://codepen.io/bcarvalho/pen/RZqmZX.
+A Pen created at CodePen.io. You can find this one at http://codepen.io/paulhbarker/pen/apvGdv.
 
- A responsive slider  timeline made with Swiper lib.
+ Column-based flexbox timeline layout. The goal is to have clean, semantic HTML while creating a (somewhat complex) timeline-looking layout.
