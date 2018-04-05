@@ -119,9 +119,9 @@ h6{
 .hexagon i { font-size: 50px;
 color: #fff;
 position: absolute;
-left: 35%;
+left: 20%;
 z-index: 10;
-top: -13%; }
+top: -15%; }
 	#header .main-head h2, #header .main-head h4{
 		font-weight:300;
 	}
