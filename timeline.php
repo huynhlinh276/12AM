@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html >
 <head>
@@ -15,20 +16,70 @@
 <body>
   <section id=timeline>
 	<h1>12AM's Timeline</h1>
-	<p class="leader">Welcome to our Albume</p>
+	<p class="leader">Welcome to our Album</p>
 	<div class="demo-card-wrapper">
 		<div class="demo-card demo-card--step1">
-			<div class="head">
-				<div class="number-box">
-					<span>01</span>
-				</div>
-				<h2><span class="small"></span> Tú Làn </h2>
-			</div>
-			<div class="body">
-				<p>Vẻ đẹp thiên nhiên của Tú Làn ngay lập tức chạm đến tâm hồn của Jordan Vogt-Roberts – người đã rong ruổi khắp mọi nơi trên thế giới tìm kiếm những cảnh quay bất hủ. Và ông không ngần ngại cho bộ phim thứ 7 về King Kong - một nhân vật quái thú mang tính biểu tượng của lịch sử điện ảnh – thoát ra khỏi bối cảnh quen thuộc là tòa nhà chọc trời ở New York.</p>
-				<img src="tulan.jpg" alt="Graphic">
-			</div>
-		</div>
+			
+
+		<?php
+        require "databaseconfig.php";
+        
+        $sql = "SELECT * from photostory";
+        $result = mysqli_query($conn, $sql);
+        if(!$result){
+        die( "Can't query data".mysqli_error($conn) );
+        }
+        if(mysqli_num_rows($result)>0){
+       while($row = mysqli_fetch_assoc($result)) {	
+        echo "<div class='head'>";
+        echo "<div class='number-box' >";
+        echo "<span>01</span>";
+        echo "</div>";
+        echo "<h2>";
+        //echo "<span class='small'>";
+       // echo "</span>".$row["Title"]"</h2>";
+
+        echo "<span>".$row["Title"]."</span>";
+         echo "</h2>";
+        echo "</div>";
+        echo "<div class='body'>";
+        echo "<p>".$row["Description"]."</p>";
+        echo "<table>";
+        echo "<tr>";
+        echo "<td><img src='".$row["Image"]."' alt='Graphic'></td> ";
+
+        echo "<td><img src='".$row["Image"]."' alt='Graphic' style ='margin-left: 40px'></td>";
+
+
+        echo "</tr>";
+
+        echo "<tr >";
+        echo "<td><img src='".$row["Image"]."' alt='Graphic'style ='margin-top:20px'></td> ";
+
+        echo "<td><img src='".$row["Image"]."' alt='Graphic' style ='margin-left: 40px'></td>";
+
+
+        echo "</tr>";
+
+        echo "</table>";
+        echo "</div>";
+        echo "</div>";
+		}
+         } else {
+        echo "0 results";
+        }
+        
+       
+        
+        mysqli_close($conn);
+        
+        // 3. Kết thúc bảng
+        ?>
+
+
+
+
+				
 
 		<div class="demo-card demo-card--step2">
 			<div class="head">
@@ -39,7 +90,7 @@
 			</div>
 			<div class="body">
 				<p>Hàng trăm ngôi nhà nổi trên vịnh, giữa những dãy núi đá vôi tạo nên cảnh quan tuyệt đẹp. Đây là phần nối liền giữa vịnh Lan Hạ và vịnh Hạ Long, địa danh đã được bình chọn là kỳ quan thiên nhiên thế giới.</p>
-				<img src="a.jpg" alt="Graphic">
+				<img src="a.jpg">
 			</div>
 		</div>
 
@@ -97,7 +148,7 @@
 
 
 
-    
+    s
 	</div>
 </section>
   

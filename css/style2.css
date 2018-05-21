@@ -215,7 +215,7 @@ body {
 }
 #timeline .demo-card .body img {
   display: block;
-  width: 100%;
+  width: 180px;
 }
 #timeline .demo-card--step1 {
   background-color: #46b8e9;
